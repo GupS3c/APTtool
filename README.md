@@ -6,10 +6,92 @@
 ## Configuration
 
 ## Cloner le dépôt
-
-git clone https://github.com/p1ngul1n0/apttool
-cd apttool
+`git clone https://github.com/GupS3c/Osint-APTool.git
+cd APTool`
  
+###Assure-toi d'avoir Python et venv installés
+Vérifie si tu as Python installé sur ton système avec cette commande :
+
+
+`python3 --version
+`
+
+ou 
+
+
+`python --version`
+
+
+i Python est installé et que tu n'as pas venv, tu peux l'installer avec cette commande :
+
+Sur Ubuntu/Debian :
+
+
+
+`sudo apt-get install python3-venv`
+
+Sur Windows :
+`venv est inclus par défaut avec les versions récentes de Python. Si tu rencontres des problèmes, assure-toi que Python est correctement ajouté à la variable d'environnement PATH.`
+
+2. Créer un environnement virtuel
+Accède au répertoire où tu souhaites créer ton environnement virtuel et exécute cette commande :
+
+
+`python3 -m venv nom_de_l'environnement`
+
+ Example :
+
+
+ `python3 -m venv .venv`
+
+
+
+
+
+
+
+
+
+
+
+
+### Ensuite activer votre environnement virtuel 
+
+
+Sur Linux/MacOS :
+
+`source .venv/bin/activate`
+
+
+Sur Windows :
+
+`.venv\Scripts\activate`
+
+
+
+
+
+
+
+
+### Installer les dépendances 
+
+
+Avec l'environnement activé, installe les dépendances nécessaires pour ton projet. Si tu as un fichier requirements.txt, tu peux l'utiliser pour installer les paquets requis :
+
+`pip install -r requirements.txt`
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,19 +100,26 @@ cd apttool
 Rechercher par nom d'utilisateur 
 
 
-python apttool.py --username username1 username2 username3
+`python3 APTool.py --username username1 username2 username3 `
+
+
+
+
+
+
+
+
 
 ### Rechercher par email 
 
-python apttool.py --username username1 username2 username3
 
-
+`python3 apttool.py -e  ./ -e [EMAIL ...], --email [EMAIL ...] `
 
 ### Exporter les résultats en PDF
 
 
 
-python apttool.py --email email1@email.com --pdf
+`python3 APTool.py --email email1@email.com --pdf`
 
 
 
@@ -39,8 +128,8 @@ python apttool.py --email email1@email.com --pdf
 ## APTtool utilise des modèles NER alimentés par l'IA pour améliorer l'extraction des métadonnées, identifiant les entités clés pour des informations plus rapides et plus précises.
 
 
-python apttool.py --username username1 --ai
- 
+`python3 APTool.py --username username1 --ai
+` 
 
 
 
