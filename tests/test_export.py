@@ -43,7 +43,7 @@ class TestExportToPDF(unittest.TestCase):
 
 
 class TestExportToCSV(unittest.TestCase):
-    config.currentUser = "p1ngul1n0"
+    config.currentUser = "GupS3c"
     config.pdf = False
     config.csv = True
     createSaveDirectory(config)

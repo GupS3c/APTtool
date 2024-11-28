@@ -21,7 +21,7 @@ def saveToCsv(results, config):
             writer.writerow(["name", "url"])
             for result in results:
                 writer.writerow([result["name"], result["url"]])
-        config.console.print(f"💾  Saved results to '[cyan1]{fileName}[/cyan1]'")
+        config.console.print(f"💾  Saved results to '[red]{fileName}[/red]'")
         return True
     except Exception as e:
         logError(e, "Coudn't saved results to CSV file!", config)

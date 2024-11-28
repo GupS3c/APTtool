@@ -5,22 +5,36 @@ import logging
 import sys
 from datetime import datetime
 
+
 sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
 import config
-from modules.whatsmyname.list_operations import checkUpdates
-from modules.core.username import verifyUsername
-from modules.core.email import verifyEmail
-from modules.utils.userAgent import getRandomUserAgent
-from modules.export.file_operations import createSaveDirectory
-from modules.export.csv import saveToCsv
-from modules.export.pdf import saveToPdf
-from modules.utils.file_operations import isFile, getLinesFromFile
-from modules.utils.permute import Permute
-from modules.ner.entity_extraction import inialize_nlp_model
+from src.modules.whatsmyname.list_operations import checkUpdates
+from src.modules.core.username import verifyUsername
+from src.modules.core.email import verifyEmail
+from src.modules.utils.userAgent import getRandomUserAgent
+from src.modules.export.file_operations import createSaveDirectory
+from src.modules.export.csv import saveToCsv
+from src.modules.export.pdf import saveToPdf
+from src.modules.utils.file_operations import isFile, getLinesFromFile
+from src.modules.utils.permute import Permute
+from src.modules.ner.entity_extraction import inialize_nlp_model
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def initiate():
@@ -33,7 +47,7 @@ def initiate():
     )
 
     parser = argparse.ArgumentParser(
-        prog="blackbird",
+        prog="APTool",
         description="An OSINT tool to search for accounts by username in social networks.",
     )
     parser.add_argument(
@@ -163,32 +177,58 @@ def initiate():
 if __name__ == "__main__":
     initiate()
     config.console.print(
-        """[red]
-    ▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀ ▄▄▄▄    ██▓ ██▀███  ▓█████▄ 
-    ▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▓█████▄ ▓██▒▓██ ▒ ██▒▒██▀ ██▌
-    ▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒██▒ ▄██▒██▒▓██ ░▄█ ▒░██   █▌
-    ▒██░█▀  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ▒██░█▀  ░██░▒██▀▀█▄  ░▓█▄   ▌
-    ░▓█  ▀█▓░██████▒▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄░▓█  ▀█▓░██░░██▓ ▒██▒░▒████▓ 
-    ░▒▓███▀▒░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░▒▓███▀▒░▓  ░ ▒▓ ░▒▓░ ▒▒▓  ▒ 
-    ▒░▒   ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░▒░▒   ░  ▒ ░  ░▒ ░ ▒░ ░ ▒  ▒ 
-    ░    ░   ░ ░    ░   ▒   ░        ░ ░░ ░  ░    ░  ▒ ░  ░░   ░  ░ ░  ░ 
-    ░          ░  ░     ░  ░░ ░      ░  ░    ░       ░     ░        ░    
-        ░                  ░                     ░               ░      
+        r"""[red]
+    ⠤⣤⣤⣤⣄⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀
+⢠⣤⣤⡄⣤⣤⣤⠄⣀⠉⣉⣙⠒⠤⣀⠀⠀
+⣄⢻⣿⣧⠻⠇⠋⠀⠋⠀⢘⣿⢳⣦⣌⠳⠄
+⠈⠃⠙⢿⣧⣙⠶⣿⣿⡷⢘⣡⣿⣿⣿⣷⣄
+⠀⠀⠀⠀⠉⠻⣿⣶⠂⠘⠛⠛⠛⢛⡛⠋⠉
+⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⢸⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣾⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⠅⠀⠀⠀⠀⠀⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⠁⠀⠀⠀⠀⠀⢸⠀⠀⠀
+⢸⠃⠀⣿⡇⠀⠀⠀⠀⠀      ⣾⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⠅⠀⠀⠀⠀          ⠀
+                        ⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⠁⠀⠀⠀⠀⠀⢸ ⠀⠀⠀      ⢸⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣾⠀⠀⠀
+⠀⠀⠀⠀⠀⠀  ⣿⠅⠀⠀⠀⠀⠀⣿⠀⠀⠀
+              ⣿⠅⠀⠀⠀⠀⠀⣿⠀⠀⠀
 
-    [/red]"""
+               _____                    _____            _____          
+         /\    \                  /\    \          /\    \         
+        /::\    \                /::\    \        /::\    \        
+       /::::\    \              /::::\    \       \:::\    \       
+      /::::::\    \            /::::::\    \       \:::\    \      
+     /:::/\:::\    \          /:::/\:::\    \       \:::\    \     
+    /:::/__\:::\    \        /:::/__\:::\    \       \:::\    \    
+   /::::\   \:::\    \      /::::\   \:::\    \      /::::\    \   
+  /::::::\   \:::\    \    /::::::\   \:::\    \    /::::::\    \  
+ /:::/\:::\   \:::\    \  /:::/\:::\   \:::\____\  /:::/\:::\    \ 
+/:::/  \:::\   \:::\____\/:::/  \:::\   \:::|    |/:::/  \:::\____\    
+\::/    \:::\  /:::/    /\::/    \:::\  /:::|____/:::/    \::/    /
+ \/____/ \:::\/:::/    /  \/_____/\:::\/:::/    /:::/    / \/____/ 
+          \::::::/    /            \::::::/    /:::/    /          
+           \::::/    /              \::::/    /:::/    /           
+           /:::/    /                \::/____/\::/    /            
+          /:::/    /                  ~~       \/____/             
+         /:::/    /                                                
+        /:::/    /                                                 
+        \::/    /                                                  
+         \/____/                                            
+    [red]/"""
     )
     config.console.print(
-        "           [white]Made with :beating_heart: by [red]Lucas 'P1ngul1n0' Antoniaci[/red] [/white]"
+        "           [white] 🧙‍♀️ by [purple]GupS3c[/purple] [/white]"
     )
 
     if config.about:
         config.console.print(
-            """
-        Author: Lucas Antoniaci (p1ngul1n0)
-        Description: Blackbird is an OSINT tool that perform reverse search in username and emails.
-        About WhatsMyName Project: This tool search for accounts using data from the WhatsMyName project, which is an open-source tool developed by WebBreacher. WhatsMyName License: The WhatsMyName project is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). More details (https://github.com/WebBreacher/WhatsMyName)
-        """
-        )
+        "           [white]@GupS3c on twitter  [/white]"
+    )
+
+    
+    
         sys.exit()
 
     if (

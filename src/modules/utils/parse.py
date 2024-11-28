@@ -74,7 +74,7 @@ def extractMetadata(metadata, response, site, config):
                 else:
                     metadataReturn["value"] = returnValue
                 config.console.print(
-                    f"      :right_arrow:  {metadataReturn['name']}: {metadataReturn['value']}"
+                    f"      ⚙️  {metadataReturn['name']}: {metadataReturn['value']}"
                 )
             elif params["type"] == "Array" and returnValue:
                 metadataReturn["value"] = []

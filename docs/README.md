@@ -1,30 +1,62 @@
-# Blackbird
+# APTtool
+<figure><img src="./docs/.gitbook/assets/apttool_printscreen.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="./.gitbook/assets/blackbird_printscreen.png" alt=""><figcaption></figcaption></figure>
+    APTtool est un outil OSINT robuste qui facilite les recherches rapides de comptes utilisateurs par nom d'utilisateur ou email sur une large gamme de plateformes, améliorant ainsi les enquêtes numériques. Il propose une intégration avec WhatsMyName, des options d'exportation au format PDF, CSV et HTTP, ainsi que des filtres de recherche personnalisables.
 
-## What is it?
+## Configuration
 
-Blackbird is an advanced Open Source Intelligence (OSINT) tool designed for rapid and thorough searches of user accounts by username or email across a vast array of platforms.
+## Cloner le dépôt
 
-#### Key Features:
+git clone https://github.com/p1ngul1n0/apttool
+cd apttool
+ 
 
-* **Username and Email Search**: Efficiently searches for user accounts by username or email on numerous websites.
-* **Metadata Extraction**: Effortlessly gather essential details from discovered accounts, including names, locations, pictures, and more. This feature ensures you have comprehensive information readily available, enhancing your ability to analyze and utilize account data effectively.
-* **WhatsMyName Integration**: Seamlessly integrates with WhatsMyName for enhanced search capabilities.
-* **Export Options**: Found accounts can be exported in PDF, CSV, or HTTP response formats, providing flexibility in data handling.
-* **Customizable Filters**: Use the `--filter` argument to tailor searches by specifying property names and desired values.
 
-#### Practical Applications:
 
-* **Digital Investigations**: Ideal for cybersecurity professionals conducting thorough investigations.
-* **Social Media Research**: Useful for identifying user accounts across multiple social media platforms.
-* **Compliance and Verification**: Assists in verifying user information for compliance purposes.
-* **Data Collection and Analysis**: Facilitates comprehensive data collection and analysis for various research purposes.
+# Utilisation
 
-### Project Developer
+Rechercher par nom d'utilisateur 
 
-[Lucas Antoniaci](https://www.linkedin.com/in/lucas-antoniaci/) [![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png)](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png)
 
-### Sponsors
+python apttool.py --username username1 username2 username3
 
-<figure><img src="https://raw.githubusercontent.com/p1ngul1n0/src/master/logo_chl.jpg" alt="" width="188"><figcaption></figcaption></figure>
+### Rechercher par email 
+
+python apttool.py --username username1 username2 username3
+
+
+
+### Exporter les résultats en PDF
+
+
+
+python apttool.py --email email1@email.com --pdf
+
+
+
+ ##  🐸  IA
+
+## APTtool utilise des modèles NER alimentés par l'IA pour améliorer l'extraction des métadonnées, identifiant les entités clés pour des informations plus rapides et plus précises.
+
+
+python apttool.py --username username1 --ai
+ 
+
+
+
+
+### Disclaim 
+
+
+
+
+
+"Ce programme ou les précédents sont destinés à des fins éducatives UNIQUEMENT. Ne l'utilisez pas sans autorisation.
+L'avertissement habituel s'applique, notamment le fait que moi (P1ngul1n0) ne suis pas responsable de tout
+dommage causé par l'utilisation directe ou indirecte des informations ou de la fonctionnalité fournie par ces
+programmes. L'auteur ou tout fournisseur d'accès Internet ne porte AUCUNE responsabilité pour le contenu ou la mauvaise utilisation
+de ces programmes ou de leurs dérivés. En utilisant ces programmes, vous acceptez le fait
+que tout dommage (perte de données, plantage système, compromission système, etc.) causé par l'utilisation de ces
+programmes n'est pas de la responsabilité de GupS3c. 
+"
+

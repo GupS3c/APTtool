@@ -55,7 +55,7 @@ async def checkSite(
                     ):
                         returnData["status"] = "FOUND"
                         config.console.print(
-                            f"  ✔️  \[[cyan1]{site['name']}[/cyan1]] [bright_white]{response['url']}[/bright_white]"
+                            f"  👁️‍🗨️ [[green]{site['name']}[/green]] [red]{response['url']}[/red]"
                         )
 
                         if site["name"] in config.metadata_params["sites"]:
@@ -103,7 +103,7 @@ async def checkSite(
                     returnData["status"] = "NOT-FOUND"
                     if config.verbose:
                         config.console.print(
-                            f"  ❌ [[blue]{site['name']}[/blue]] [bright_white]{response['url']}[/bright_white]"
+                            f"  ❌ [[green]{site['name']}[/green]] [yellow]{response['url']}[/yellow]"
                         )
                 return returnData
         except Exception as e:
@@ -141,7 +141,7 @@ def verifyUsername(username, config):
     config.username_sites = applyFilters(sitesToSearch, config)
 
     config.console.print(
-        f':play_button: Enumerating accounts with username "[cyan1]{username}[/cyan1]"'
+        f':play_button: APT Scan username Accounts"[yellow]{username}[/yellow]"'
     )
     start_time = time.time()
     results = asyncio.run(fetchResults(username, config))

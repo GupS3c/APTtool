@@ -62,7 +62,7 @@ async def checkSite(
                     ):
                         returnData["status"] = "FOUND"
                         config.console.print(
-                            f"  ✔️  \[[cyan1]{site['name']}[/cyan1]] [bright_white]{response['url']}[/bright_white]"
+                            f"  🕷️ [[green]{site['name']}[/green]] [red]{response['url']}[/red]"
                         )
                         if site["metadata"]:
                             extractedMetadata = extractMetadata(
@@ -133,7 +133,7 @@ def verifyEmail(email, config):
     config.email_sites = applyFilters(sitesToSearch, config)
 
     config.console.print(
-        f':play_button: Enumerating accounts with email "[cyan1]{email}[/cyan1]"'
+        f':play_button: APT Scann username  "[yellow]{email}[/yellow]"'
     )
     start_time = time.time()
     results = asyncio.run(fetchResults(email, config))
@@ -145,7 +145,7 @@ def verifyEmail(email, config):
 
     if config.dump:
         config.console.print(
-            f"💾  Dump content saved to '[cyan1]{config.currentEmail}_{config.dateRaw}_blackbird/dump_{config.currentEmail}[/cyan1]'"
+            f"💾  Dump content saved to '[cyan1]{config.currentEmail}_{config.dateRaw}_APTtool/dump_{config.currentEmail}[/cyan1]'"
         )
 
     # Filter results to only found accounts
