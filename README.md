@@ -1,7 +1,7 @@
-# APTtool
+# Osint-APTtool
 <figure><img src="" alt=""><figcaption></figcaption></figure>
 
-    APTtool est un outil OSINT robuste qui facilite les recherches rapides de comptes utilisateurs par nom d'utilisateur ou email sur une large gamme de plateformes, améliorant ainsi les enquêtes numériques. Il propose une intégration avec WhatsMyName, des options d'exportation au format PDF, CSV et HTTP, ainsi que des filtres de recherche personnalisables.
+APTtool est un outil OSINT robuste qui facilite les recherches rapides de comptes utilisateurs par nom d'utilisateur ou email sur une large gamme de plateformes, améliorant ainsi les enquêtes numériques. Il propose une intégration avec WhatsMyName, des options d'exportation au format PDF, CSV et HTTP, ainsi que des filtres de recherche personnalisables.
 
 ## Configuration
 
